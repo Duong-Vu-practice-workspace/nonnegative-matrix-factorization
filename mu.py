@@ -71,6 +71,8 @@ def mu(A, k, delta, num_iter, init_W=None, init_H=None, print_enabled=False):
         print(AH_T)
         print("===============================")
         WHH_T =  W @ H @ H.T + delta
+        print(W @ H)
+        print("===============================")
         print(WHH_T)
         print("===============================")
         for i in range(np.size(W, 0)):
