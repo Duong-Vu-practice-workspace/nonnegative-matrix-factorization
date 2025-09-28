@@ -54,20 +54,27 @@ def mu(A, k, delta, num_iter, init_W=None, init_H=None, print_enabled=False):
 
         # Update H
         W_TA = W.T @ A
+        print(W_TA)
+        print("===============================")
         W_TWH = W.T @ W @ H + delta
-
+        print(W_TWH)
+        print("===============================")
         for i in range(np.size(H, 0)):
             for j in range(np.size(H, 1)):
                 H[i, j] = H[i, j] * W_TA[i, j] / W_TWH[i, j]
-
+        print(H)
+        print("===============================")
         # Update W
         AH_T = A @ H.T
+        print(AH_T)
+        print("===============================")
         WHH_T =  W @ H @ H.T + delta
-
+        print(WHH_T)
+        print("===============================")
         for i in range(np.size(W, 0)):
             for j in range(np.size(W, 1)):
                 W[i, j] = W[i, j] * AH_T[i, j] / WHH_T[i, j]
-
+        print(W)
         if print_enabled:
             frob_norm = np.linalg.norm(A - W @ H, 'fro')
             print("iteration " + str(n + 1) + ": " + str(frob_norm))

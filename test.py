@@ -31,7 +31,7 @@ print(A.shape)
 print(W0.shape)
 print(H0.shape)
 
-W, H = mu(A, k, delta = 10**-9, num_iter=50, init_W=W0, init_H=H0, print_enabled=True)
+W, H = mu(A, k, delta = 0, num_iter=50, init_W=W0, init_H=H0, print_enabled=True)
 print(W)
 print("================================")
 print(H)
